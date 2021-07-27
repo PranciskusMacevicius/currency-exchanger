@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/myBalancesText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/my_balances"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <HorizontalScrollView
+        android:id="@+id/myBalancesScrollView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/myBalancesText">
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <TextView
+        android:id="@+id/currencyExchangeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/currency_exchange"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/myBalancesScrollView" />
+
+    <ImageView
+        android:id="@+id/sellImage"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_margin="10dp"
+        android:contentDescription="@string/arrow_up"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/currencyExchangeText"
+        app:srcCompat="@drawable/ic_baseline_arrow_upward_24" />
+
+    <ImageView
+        android:id="@+id/receiveImage"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_margin="10dp"
+        android:contentDescription="@string/arrow_down"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sellImage"
+        app:srcCompat="@drawable/ic_baseline_arrow_downward_24" />
+
+    <TextView
+        android:id="@+id/sellText"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_margin="10dp"
+        android:fontFamily="@font/yantramanav"
+        android:gravity="center_vertical"
+        android:text="@string/sell"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/sellImage"
+        app:layout_constraintTop_toBottomOf="@+id/currencyExchangeText" />
+
+    <TextView
+        android:id="@+id/receiveText"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_margin="10dp"
+        android:fontFamily="@font/yantramanav"
+        android:gravity="center_vertical"
+        android:text="@string/receive"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/receiveImage"
+        app:layout_constraintTop_toBottomOf="@+id/sellImage" />
+
+    <Button
+        android:id="@+id/submitButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/oval_button"
+        android:text="@string/submit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/sellEditText"
+        android:layout_width="220dp"
+        android:layout_height="40dp"
+        android:layout_margin="10dp"
+        android:autofillHints="Enter amount"
+        android:ems="10"
+        android:fontFamily="@font/yantramanav"
+        android:hint="@string/enter_amount"
+        android:inputType="numberDecimal"
+        android:text="@string/_100"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/receiveText"
+        app:layout_constraintTop_toBottomOf="@+id/currencyExchangeText" />
+
+    <TextView
+        android:id="@+id/receiveCalculatedText"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_margin="10dp"
+        android:fontFamily="@font/yantramanav"
+        android:gravity="center_vertical"
+        android:textColor="#67ad5b"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/receiveText"
+        app:layout_constraintTop_toBottomOf="@+id/sellImage"
+        tools:text="Calculation" />
+
+    <TextView
+        android:id="@+id/sellCurrencyText"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_margin="10dp"
+        android:fontFamily="@font/yantramanav"
+        android:gravity="center_vertical"
+        android:text="@string/eur"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/sellEditText"
+        app:layout_constraintTop_toBottomOf="@+id/currencyExchangeText" />
+
+    <TextView
+        android:id="@+id/receiveCurrencyText"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_margin="10dp"
+        android:fontFamily="@font/yantramanav"
+        android:gravity="center_vertical"
+        android:text="@string/usd"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/receivePickerImage"
+        app:layout_constraintStart_toEndOf="@+id/sellEditText"
+        app:layout_constraintTop_toBottomOf="@+id/sellImage" />
+
+    <ImageView
+        android:id="@+id/sellPickerImage"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_margin="10dp"
+        android:contentDescription="@string/sell_picker"
+        app:layout_constraintBottom_toTopOf="@+id/receiveCurrencyText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/sellCurrencyText"
+        app:layout_constraintTop_toBottomOf="@+id/currencyExchangeText"
+        app:srcCompat="@drawable/ic_baseline_arrow_drop_down_24" />
+
+    <ImageView
+        android:id="@+id/receivePickerImage"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_margin="10dp"
+        android:contentDescription="@string/receive_picker"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/sellCurrencyText"
+        app:layout_constraintTop_toBottomOf="@+id/sellImage"
+        app:srcCompat="@drawable/ic_baseline_arrow_drop_down_24" />
+</androidx.constraintlayout.widget.ConstraintLayout>

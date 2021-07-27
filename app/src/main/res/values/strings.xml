@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Currency Exchanger</string>
+    <string name="currency_exchange">CURRENCY EXCHANGE</string>
+    <string name="my_balances">MY BALANCES</string>
+    <string name="name_aed">Currency converter</string>
+    <string name="arrow_down">arrow down</string>
+    <string name="arrow_up">arrow up</string>
+    <string name="sell">Sell</string>
+    <string name="receive">Receive</string>
+    <string name="submit">submit</string>
+    <string name="_100">100</string>
+    <string name="eur">EUR</string>
+    <string name="usd">USD</string>
+    <string name="sell_picker">sell picker</string>
+    <string name="receive_picker">receive picker</string>
+    <string name="enter_amount">Enter amount</string>
+</resources>
